@@ -12,7 +12,8 @@
     html, body {
       height: 100%;
       font-family: "Inter", system-ui, sans-serif;
-      background: #fff; color: #000;
+      background: #fff;
+      color: #000;
     }
 
     /* ─── 2. HERO ─── */
@@ -47,6 +48,7 @@
       line-height: 1.6;
       text-align: center;
       color: #111;
+      padding: 0 1rem;
     }
 
     /* ─── 4. CLIENTS GRID ─── */
@@ -73,6 +75,15 @@
     .client-grid div {
       text-transform: uppercase;
       letter-spacing: .02em;
+      padding: .5rem;
+    }
+
+    /* ─── 4a. RESPONSIVE GRID ─── */
+    @media (max-width: 768px) {
+      .client-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .client-grid { grid-template-columns: 1fr; }
     }
 
     /* ─── 5. FOOTER ─── */
@@ -82,21 +93,13 @@
       line-height: 1.5;
       color: #555;
       text-align: center;
+      padding: 0 1rem;
     }
 
-    /* ─── 6. DARK/LIGHT TOGGLE ─── */
-    .toggle {
-      position: fixed; top: 1rem; right: 1rem;
-      background: none; border: 1px solid currentColor;
-      padding: .4rem .75rem; cursor: pointer;
-      font-size: .875rem;
-    }
-    body.dark {
-      background: #000; color: #fff;
-    }
+    /* Remove toggle styles */
   </style>
 </head>
-<body class="light">
+<body>
 
   <!-- HERO -->
   <section class="hero">
@@ -105,13 +108,12 @@
       Strategy Development, Enterprise Business Architecture<br>
       and Consulting for Complex Organisations
     </p>
-    <span class="scroll-cue" aria-hidden="true"></span>
   </section>
 
   <!-- DESCRIPTION -->
   <section class="description">
     <p>
-      James McPhillips and his team offer<br> unrivalled capability and expertise.
+      James McPhillips and his team offer <br>unrivalled capability and expertise.
     </p>
   </section>
 
@@ -135,22 +137,11 @@
     <p>ⓒ With Insight Enterprises Pty Ltd</p>
     <p>ABN: 26 684 088 293</p>
     <p>Write to hello@withinsight.com.au</p>
-        <br>
+    <br>
     <p>We are not on social media</p>
     <p>We are not accepting new clients at this time</p>
-        <br><br><br>
+    <br><br><br>
   </footer>
 
-  <!-- TOGGLE SCRIPT -->
-  <button class="toggle" aria-pressed="false" aria-label="Toggle color scheme">
-    Toggle Theme
-  </button>
-  <script>
-    const btn = document.querySelector('.toggle');
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      btn.setAttribute('aria-pressed', document.body.classList.contains('dark'));
-    });
-  </script>
 </body>
 </html>
