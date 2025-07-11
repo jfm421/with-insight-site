@@ -96,6 +96,28 @@
       padding: 0 1rem;
     }
 
+    /* ─── NEW: FADE-IN ANIMATION ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in {
+        transition: none;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* Remove toggle styles */
   </style>
 </head>
@@ -111,14 +133,14 @@
   </section>
 
   <!-- DESCRIPTION -->
-  <section class="description">
+  <section class="description fade-in">
     <p>
       James McPhillips and his team offer <br>unrivalled consulting capability and expertise.
     </p>
   </section>
 
   <!-- CLIENTS -->
-  <section class="clients">
+  <section class="clients fade-in">
     <h2>Past and Present Clients</h2>
     <div class="client-grid">
       <div>Services Australia</div>
@@ -133,7 +155,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer fade-in">
     <p>ⓒ With Insight Enterprises Pty Ltd</p>
     <p>ABN: 26 684 088 293</p>
     <p>Write to hello@withinsight.com.au</p>
@@ -142,6 +164,30 @@
     <p>We are not accepting new clients at this time.</p>
     <br><br><br>
   </footer>
+
+  <!-- NEW: JAVASCRIPT FOR INTERSECTION OBSERVER -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.fade-in');
+      const observerOptions = {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+        rootMargin: '0px 0px -50px 0px' // Slight offset for smoother entry
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Animate only once
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    });
+  </script>
 
 </body>
 </html>
