@@ -99,52 +99,47 @@
     /* ─── NEW: FADE-IN ANIMATION ─── */
     .fade-in {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* A little more duration */
+      transition: opacity 0s; /* Instant snap to visible, letters handle the animation */
     }
     .fade-in.visible {
+      opacity: 1;
+    }
+
+    /* Letter-by-letter stagger (global base for fast text) */
+    .fade-in .letter {
+      display: inline; /* Natural flow and wrapping, fixes alignment */
+      vertical-align: top; /* Prevents baseline shifts during animation */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+      transition-delay: calc(0.03s * var(--index)); /* Faster for non-headings */
+    }
+    .fade-in.visible .letter {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Hero-specific overrides for staggered text reveal (keeps background solid) */
-    .hero.fade-in {
-      opacity: 1 !important;
-      transform: none !important;
+    /* Slower uniform speed for headings */
+    .hero h1 .letter,
+    .clients h2 .letter {
+      transition-delay: calc(0.1s * var(--index)); /* Same deliberate speed on headings */
     }
-    .hero .word,
-    .hero .tagline {
-      display: inline-block; /* Ensures words behave nicely */
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-    }
-    .hero.visible .word:nth-of-type(1) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0s;
-    }
-    .hero.visible .word:nth-of-type(2) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.6s; /* Stagger for "Insight" after "With" */
-    }
-    .hero.visible .tagline {
-      opacity: 0.85;
-      transform: translateY(0);
-      transition-delay: 1.2s; /* Tagline appears after the title */
+
+    /* Hero tagline: Base delay after title (title ~12 chars @ 0.1s = 1.2s max delay) */
+    .hero.visible .tagline .letter {
+      transition-delay: calc(1.2s + 0.03s * var(--index));
     }
 
     /* Respect reduced motion preferences */
     @media (prefers-reduced-motion: reduce) {
-      .fade-in,
-      .hero .word,
-      .hero .tagline {
+      .fade-in {
+        transition: none;
+      }
+      .fade-in .letter {
         transition: none;
       }
       .fade-in.visible,
-      .hero.visible .word,
-      .hero.visible .tagline {
+      .fade-in.visible .letter {
         opacity: 1;
         transform: translateY(0);
       }
@@ -157,10 +152,7 @@
 
   <!-- HERO -->
   <section class="hero fade-in">
-    <h1>
-      <span class="word">With</span>
-      <span class="word">Insight</span>
-    </h1>
+    <h1>With Insight</h1>
     <p class="tagline">
       Strategy development, enterprise design, architecture<br>
       & consulting for complex organisations
@@ -200,9 +192,40 @@
     <br><br><br>
   </footer>
 
-  <!-- NEW: JAVASCRIPT FOR INTERSECTION OBSERVER -->
+  <!-- NEW: JAVASCRIPT FOR STAGGER AND INTERSECTION OBSERVER -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Function to dynamically split text into staggered letter spans (preserves <br> and structure)
+      function addStaggerLetters(element) {
+        let index = 0;
+        const walk = (el) => {
+          Array.from(el.childNodes).forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              const text = node.textContent;
+              const fragment = document.createDocumentFragment();
+              for (let char of text) {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.classList.add('letter');
+                span.style.setProperty('--index', index);
+                fragment.appendChild(span);
+                index++;
+              }
+              node.replaceWith(fragment);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              walk(node);
+            }
+          });
+        };
+        walk(element);
+      }
+
+      // Select all text elements to apply stagger (across the board)
+      const staggerSelectors = '.hero h1, .hero .tagline, .description p, .clients h2, .client-grid div, .footer p';
+      const staggerElements = document.querySelectorAll(staggerSelectors);
+      staggerElements.forEach(addStaggerLetters);
+
+      // Intersection Observer for section reveals
       const sections = document.querySelectorAll('.fade-in');
       const observerOptions = {
         threshold: 0.1, // Trigger when 10% of the section is visible
