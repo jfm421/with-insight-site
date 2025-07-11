@@ -100,19 +100,51 @@
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* A little more duration */
     }
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
+    /* Hero-specific overrides for staggered text reveal (keeps background solid) */
+    .hero.fade-in {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .hero .word,
+    .hero .tagline {
+      display: inline-block; /* Ensures words behave nicely */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    }
+    .hero.visible .word:nth-of-type(1) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0s;
+    }
+    .hero.visible .word:nth-of-type(2) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.6s; /* Stagger for "Insight" after "With" */
+    }
+    .hero.visible .tagline {
+      opacity: 0.85;
+      transform: translateY(0);
+      transition-delay: 1.2s; /* Tagline appears after the title */
+    }
+
     /* Respect reduced motion preferences */
     @media (prefers-reduced-motion: reduce) {
-      .fade-in {
+      .fade-in,
+      .hero .word,
+      .hero .tagline {
         transition: none;
       }
-      .fade-in.visible {
+      .fade-in.visible,
+      .hero.visible .word,
+      .hero.visible .tagline {
         opacity: 1;
         transform: translateY(0);
       }
@@ -124,8 +156,11 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
-    <h1>With Insight</h1>
+  <section class="hero fade-in">
+    <h1>
+      <span class="word">With</span>
+      <span class="word">Insight</span>
+    </h1>
     <p class="tagline">
       Strategy development, enterprise design, architecture<br>
       & consulting for complex organisations
