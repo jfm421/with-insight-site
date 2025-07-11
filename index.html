@@ -105,29 +105,36 @@
       opacity: 1;
     }
 
-    /* Letter-by-letter stagger (global base for fast text) */
+    /* Letter-by-letter stagger (base for hero tagline etc.) */
     .fade-in .letter {
       display: inline; /* Natural flow and wrapping, fixes alignment */
       vertical-align: top; /* Prevents baseline shifts during animation */
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-      transition-delay: calc(0.03s * var(--index)); /* Faster for non-headings */
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Twice as fast */
+      transition-delay: calc(0.015s * var(--index)); /* Halved from 0.03s */
     }
     .fade-in.visible .letter {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Slower uniform speed for headings */
-    .hero h1 .letter,
-    .clients h2 .letter {
-      transition-delay: calc(0.1s * var(--index)); /* Same deliberate speed on headings */
+    /* Quicker speed for non-hero text */
+    .description .letter,
+    .clients .letter,
+    .footer .letter {
+      transition-delay: calc(0.005s * var(--index)); /* Halved from 0.01s */
     }
 
-    /* Hero tagline: Base delay after title (title ~12 chars @ 0.1s = 1.2s max delay) */
+    /* Slower uniform speed for headings (overrides non-hero quick speed for clients h2) */
+    .hero h1 .letter,
+    .clients h2 .letter {
+      transition-delay: calc(0.05s * var(--index)); /* Halved from 0.1s */
+    }
+
+    /* Hero tagline: Base delay after title (halved offset based on title ~12 chars @ 0.05s = ~0.6s max) */
     .hero.visible .tagline .letter {
-      transition-delay: calc(1.2s + 0.03s * var(--index));
+      transition-delay: calc(0.6s + 0.015s * var(--index));
     }
 
     /* Respect reduced motion preferences */
