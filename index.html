@@ -111,8 +111,8 @@
       vertical-align: top; /* Prevents baseline shifts during animation */
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Twice as fast */
-      transition-delay: calc(0.015s * var(--index)); /* Halved from 0.03s */
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Current fast duration */
+      transition-delay: calc(0.015s * var(--index)); /* Current base */
     }
     .fade-in.visible .letter {
       opacity: 1;
@@ -123,18 +123,23 @@
     .description .letter,
     .clients .letter,
     .footer .letter {
-      transition-delay: calc(0.005s * var(--index)); /* Halved from 0.01s */
+      transition-delay: calc(0.005s * var(--index)); /* Current fast */
     }
 
-    /* Slower uniform speed for headings (overrides non-hero quick speed for clients h2) */
-    .hero h1 .letter,
+    /* Slower uniform speed for headings (current for clients h2) */
     .clients h2 .letter {
-      transition-delay: calc(0.05s * var(--index)); /* Halved from 0.1s */
+      transition-delay: calc(0.05s * var(--index)); /* Current fast for other headings */
     }
 
-    /* Hero tagline: Base delay after title (halved offset based on title ~12 chars @ 0.05s = ~0.6s max) */
+    /* Revert to previous slower speed for "With Insight" title only */
+    .hero h1 .letter {
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Previous duration */
+      transition-delay: calc(0.1s * var(--index)); /* Previous delay */
+    }
+
+    /* Hero tagline: Adjusted offset to wait for slower title (~12 chars @ 0.1s = 1.2s max) */
     .hero.visible .tagline .letter {
-      transition-delay: calc(0.6s + 0.015s * var(--index));
+      transition-delay: calc(1.2s + 0.015s * var(--index));
     }
 
     /* Respect reduced motion preferences */
