@@ -32,6 +32,7 @@
       font: 700 10vw/1 "Playfair Display", serif;
       letter-spacing: -0.02em;
       text-transform: uppercase;
+      cursor: pointer; /* Makes it feel interactive */
     }
     .hero .tagline {
       margin-top: 1rem;
@@ -139,22 +140,29 @@
     .fade-in {
       opacity: 1; /* Sections now visible immediately, elements fade in */
     }
-    .fade-in.visible {
-      /* No need for section-level fade; handled by children */
-    }
 
-    /* Letter-by-letter stagger (now only for hero h1) */
+    /* Letter-by-letter stagger (only for hero h1) */
     .hero .letter {
-      display: inline; /* Natural flow and wrapping */
-      vertical-align: top; /* Prevents baseline shifts */
+      display: inline;
+      vertical-align: top;
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Slower for title */
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
       transition-delay: calc(0.1s * var(--index));
     }
     .hero.visible .letter {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* NEW: Hover Effect on Hero Letters (Bounce/Scale Example) */
+    @keyframes bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .hero h1:hover .letter {
+      animation: bounce 0.5s ease-in-out;
+      animation-delay: calc(0.05s * var(--index)); /* Staggered bounce */
     }
 
     /* Respect reduced motion preferences */
@@ -175,6 +183,9 @@
       .footer.visible p {
         opacity: 1;
         transform: translateY(0);
+      }
+      .hero h1:hover .letter {
+        animation: none;
       }
     }
 
@@ -257,18 +268,18 @@
       const staggerElements = document.querySelectorAll('.hero h1');
       staggerElements.forEach(addStaggerLetters);
 
-      // Intersection Observer for section reveals (triggers .visible for fades)
+      // Intersection Observer for section reveals
       const sections = document.querySelectorAll('.fade-in');
       const observerOptions = {
-        threshold: 0.1, // Trigger when 10% of the section is visible
-        rootMargin: '0px 0px -50px 0px' // Slight offset for smoother entry
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
       };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Animate only once
+            observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
