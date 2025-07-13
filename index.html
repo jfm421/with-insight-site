@@ -37,7 +37,14 @@
       margin-top: 1rem;
       font-size: clamp(1rem, 2.25vw, 1.5rem);
       line-height: 1.4;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition-delay: 1.2s; /* Timed after the slower title stagger */
+    }
+    .hero.visible .tagline {
       opacity: 0.85;
+      transform: translateY(0);
     }
 
     /* ─── 3. DESCRIPTION BLOCK ─── */
@@ -50,6 +57,15 @@
       color: #111;
       padding: 0 1rem;
     }
+    .description p {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .description.visible p {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ─── 4. CLIENTS GRID ─── */
     .clients {
@@ -61,6 +77,13 @@
       text-transform: uppercase;
       margin-bottom: 2rem;
       letter-spacing: .05em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .clients.visible h2 {
+      opacity: 1;
+      transform: translateY(0);
     }
     .client-grid {
       display: grid;
@@ -76,6 +99,13 @@
       text-transform: uppercase;
       letter-spacing: .02em;
       padding: .5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .clients.visible .client-grid div {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ─── 4a. RESPONSIVE GRID ─── */
@@ -95,63 +125,54 @@
       text-align: center;
       padding: 0 1rem;
     }
-
-    /* ─── NEW: FADE-IN ANIMATION ─── */
-    .fade-in {
-      opacity: 0;
-      transition: opacity 0s; /* Instant snap to visible, letters handle the animation */
-    }
-    .fade-in.visible {
-      opacity: 1;
-    }
-
-    /* Letter-by-letter stagger (base for hero tagline etc.) */
-    .fade-in .letter {
-      display: inline; /* Natural flow and wrapping, fixes alignment */
-      vertical-align: top; /* Prevents baseline shifts during animation */
+    .footer p {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Current fast duration */
-      transition-delay: calc(0.015s * var(--index)); /* Current base */
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    .fade-in.visible .letter {
+    .footer.visible p {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Quicker speed for non-hero text */
-    .description .letter,
-    .clients .letter,
-    .footer .letter {
-      transition-delay: calc(0.005s * var(--index)); /* Current fast */
+    /* ─── NEW: FADE-IN ANIMATION FOR SECTIONS ─── */
+    .fade-in {
+      opacity: 1; /* Sections now visible immediately, elements fade in */
+    }
+    .fade-in.visible {
+      /* No need for section-level fade; handled by children */
     }
 
-    /* Slower uniform speed for headings (current for clients h2) */
-    .clients h2 .letter {
-      transition-delay: calc(0.05s * var(--index)); /* Current fast for other headings */
+    /* Letter-by-letter stagger (now only for hero h1) */
+    .hero .letter {
+      display: inline; /* Natural flow and wrapping */
+      vertical-align: top; /* Prevents baseline shifts */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Slower for title */
+      transition-delay: calc(0.1s * var(--index));
     }
-
-    /* Revert to previous slower speed for "With Insight" title only */
-    .hero h1 .letter {
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Previous duration */
-      transition-delay: calc(0.1s * var(--index)); /* Previous delay */
-    }
-
-    /* Hero tagline: Adjusted offset to wait for slower title (~12 chars @ 0.1s = 1.2s max) */
-    .hero.visible .tagline .letter {
-      transition-delay: calc(1.2s + 0.015s * var(--index));
+    .hero.visible .letter {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Respect reduced motion preferences */
     @media (prefers-reduced-motion: reduce) {
-      .fade-in {
+      .hero .letter,
+      .hero .tagline,
+      .description p,
+      .clients h2,
+      .client-grid div,
+      .footer p {
         transition: none;
       }
-      .fade-in .letter {
-        transition: none;
-      }
-      .fade-in.visible,
-      .fade-in.visible .letter {
+      .hero.visible .letter,
+      .hero.visible .tagline,
+      .description.visible p,
+      .clients.visible h2,
+      .clients.visible .client-grid div,
+      .footer.visible p {
         opacity: 1;
         transform: translateY(0);
       }
@@ -207,7 +228,7 @@
   <!-- NEW: JAVASCRIPT FOR STAGGER AND INTERSECTION OBSERVER -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Function to dynamically split text into staggered letter spans (preserves <br> and structure)
+      // Function to dynamically split text into staggered letter spans (now only for hero h1)
       function addStaggerLetters(element) {
         let index = 0;
         const walk = (el) => {
@@ -232,12 +253,11 @@
         walk(element);
       }
 
-      // Select all text elements to apply stagger (across the board)
-      const staggerSelectors = '.hero h1, .hero .tagline, .description p, .clients h2, .client-grid div, .footer p';
-      const staggerElements = document.querySelectorAll(staggerSelectors);
+      // Apply stagger only to hero h1
+      const staggerElements = document.querySelectorAll('.hero h1');
       staggerElements.forEach(addStaggerLetters);
 
-      // Intersection Observer for section reveals
+      // Intersection Observer for section reveals (triggers .visible for fades)
       const sections = document.querySelectorAll('.fade-in');
       const observerOptions = {
         threshold: 0.1, // Trigger when 10% of the section is visible
