@@ -155,14 +155,13 @@
       transform: translateY(0);
     }
 
-    /* NEW: Hover Effect on Hero Letters (Bounce/Scale Example) */
-    @keyframes bounce {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-    .hero h1:hover .letter {
-      animation: bounce 0.5s ease-in-out;
-      animation-delay: calc(0.05s * var(--index)); /* Staggered bounce */
+    /* NEW: Hover Effect - Slower Ripple/Wave with Cursor Tracking (Option 4) */
+    @keyframes wave {
+      0% { transform: rotate(0deg); filter: blur(0); }
+      25% { transform: rotate(5deg); filter: blur(2px); }
+      50% { transform: rotate(0deg); filter: blur(0); }
+      75% { transform: rotate(-5deg); filter: blur(2px); }
+      100% { transform: rotate(0deg); filter: blur(0); }
     }
 
     /* Respect reduced motion preferences */
@@ -184,8 +183,8 @@
         opacity: 1;
         transform: translateY(0);
       }
-      .hero h1:hover .letter {
-        animation: none;
+      .hero .letter {
+        animation: none !important;
       }
     }
 
@@ -286,6 +285,33 @@
 
       sections.forEach((section) => {
         observer.observe(section);
+      });
+
+      // NEW: Cursor-tracking ripple on letters
+      const letters = document.querySelectorAll('.hero .letter');
+      letters.forEach((letter, index) => {
+        letter.addEventListener('mouseenter', () => {
+          // Reset and trigger wave on this letter
+          letter.style.animation = 'none';
+          letter.offsetHeight; // Force reflow
+          letter.style.animation = 'wave 1.2s ease-in-out'; // Slower duration
+
+          // Ripple to left neighbor
+          if (index > 0) {
+            const leftNeighbor = letters[index - 1];
+            leftNeighbor.style.animation = 'none';
+            leftNeighbor.offsetHeight;
+            leftNeighbor.style.animation = 'wave 1.2s ease-in-out 0.1s';
+          }
+
+          // Ripple to right neighbor
+          if (index < letters.length - 1) {
+            const rightNeighbor = letters[index + 1];
+            rightNeighbor.style.animation = 'none';
+            rightNeighbor.offsetHeight;
+            rightNeighbor.style.animation = 'wave 1.2s ease-in-out 0.1s';
+          }
+        });
       });
     });
   </script>
