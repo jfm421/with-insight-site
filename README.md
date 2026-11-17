@@ -23,5 +23,8 @@ python3 -m http.server 8080
 
 ## Before you publish
 
-The "Selected work" section holds placeholder examples. Replace them with real, approved
-engagements, then delete the paragraph with the class `draft-note`.
+- The "Selected work" section holds draft examples that are not records of specific
+  engagements. Confirm or correct each one, then delete the paragraph with the class
+  `draft-note`.
+- The "Discretion" panel in the About section makes four commitments about client
+  information. Confirm that each one matches your contracts and practice.
