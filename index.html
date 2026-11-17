@@ -361,21 +361,17 @@
     .clients__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 28px 24px; align-items: start; }
     .clients__head { grid-column: 1 / span 3; }
     .clients__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.1rem, 3.3vw, 3.1rem); line-height: 1; letter-spacing: -.016em; margin-top: 18px; max-width: 8ch; }
-    .clients__list { grid-column: 4 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 4vw, 64px); border-bottom: 1px solid var(--rule); }
-    .clients__list li { display: grid; grid-template-columns: 2.6em minmax(0, 1fr); align-items: baseline; padding: 20px 0; border-top: 1px solid var(--rule); font-family: var(--serif); font-size: clamp(1.45rem, 2.05vw, 1.95rem); line-height: 1.12; letter-spacing: -.008em; transition: padding-left .45s var(--ease); }
-    .clients__list li span { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; color: var(--amber-ink); }
-    .clients__list li:hover { padding-left: 10px; }
-    .clients__types { grid-column: 4 / -1; margin-top: clamp(16px, 2.4vw, 36px); }
+    .clients__types { grid-column: 4 / -1; }
     .clients__types-lead { color: var(--text-2); font-size: clamp(1.05rem, 1.3vw, 1.2rem); line-height: 1.5; max-width: 54ch; margin-bottom: clamp(18px, 2.4vw, 28px); }
     .clients__types dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 4vw, 64px); }
     .clients__types dl > div { border-top: 1px solid var(--rule); padding: 16px 0 24px; }
     .clients__types dt { font-family: var(--mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-ink); margin-bottom: 8px; }
     .clients__types dd { color: var(--text-2); max-width: 46ch; }
     @media (max-width: 860px) {
-      .clients__head, .clients__list, .clients__types { grid-column: 1 / -1; }
+      .clients__head, .clients__types { grid-column: 1 / -1; }
       .clients__title { max-width: none; }
     }
-    @media (max-width: 620px) { .clients__list, .clients__types dl { grid-template-columns: 1fr; } }
+    @media (max-width: 620px) { .clients__types dl { grid-template-columns: 1fr; } }
 
     /* ───────── 12. ABOUT ───────── */
     .about__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 30px 24px; align-items: start; }
@@ -1029,19 +1025,9 @@
       <div class="container clients__grid">
         <div class="clients__head">
           <p class="eyebrow" data-reveal>Clients</p>
-          <h2 class="clients__title" id="clients-title" data-reveal>Past and present clients</h2>
+          <h2 class="clients__title" id="clients-title" data-reveal>Who we work with</h2>
         </div>
-        <ul class="clients__list" data-reveal style="--d:.1s">
-          <li><span>01</span>Services Australia</li>
-          <li><span>02</span>Department of Health, Disability and Ageing</li>
-          <li><span>03</span>Department of Industry, Science and Resources</li>
-          <li><span>04</span>Australian Centre for Disease Control</li>
-          <li><span>05</span>Department of Foreign Affairs and Trade</li>
-          <li><span>06</span>Next Apex</li>
-          <li><span>07</span>Avec Global</li>
-          <li><span>08</span>Arteri</li>
-        </ul>
-        <div class="clients__types" data-reveal>
+        <div class="clients__types" data-reveal style="--d:.1s">
           <p class="clients__types-lead">Our experience covers these kinds of organisation.</p>
           <dl>
             <div><dt>Australian Government</dt><dd>Large departments, central agencies, national regulators, small agencies and a national cultural institution.</dd></div>

@@ -25,7 +25,7 @@ python3 -m http.server 8080
 
 - The copy comes from the owner's work summary. Add no figure, date, result or quote
   that the summary does not contain.
-- The "Selected work" section names no client, program, system, supplier or person.
-  Keep any new example at the same level of generality.
+- The site names no client, program, system, supplier or person. Keep any new
+  example or client description at the same level of generality.
 - Three examples describe work in progress. Each one shows a status and claims no
   result. Add the result only when the work is complete.
