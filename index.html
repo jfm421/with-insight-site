@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>With Insight | Business architecture consultancy</title>
-  <meta name="description" content="With Insight is a business architecture consultancy. It designs and transforms business models, operating models and enterprise architectures. Founded by James McPhillips.">
+  <title>With Insight | Business architecture and AI readiness</title>
+  <meta name="description" content="With Insight is a business architecture consultancy. It designs and transforms business models, operating models and enterprise architectures, and it gets organisations ready for AI. Founded by James McPhillips.">
   <meta name="theme-color" content="#07090D">
   <link rel="canonical" href="https://withinsight.com.au/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="With Insight">
   <meta property="og:title" content="With Insight">
-  <meta property="og:description" content="A business architecture consultancy. We design and transform business models, operating models and enterprise architectures.">
+  <meta property="og:description" content="A business architecture consultancy. We design and transform business models, operating models and enterprise architectures, and we get organisations ready for AI.">
   <meta property="og:url" content="https://withinsight.com.au/">
   <meta property="og:image" content="https://withinsight.com.au/assets/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -26,7 +26,8 @@
     "name": "With Insight",
     "legalName": "With Insight Enterprises Pty Ltd",
     "url": "https://withinsight.com.au/",
-    "description": "A business architecture consultancy. It designs and transforms business models, operating models and enterprise architectures.",
+    "description": "A business architecture consultancy. It designs and transforms business models, operating models and enterprise architectures, and it gets organisations ready for AI.",
+    "knowsAbout": ["Business architecture", "Enterprise design", "Strategy", "AI readiness"],
     "founder": { "@type": "Person", "name": "James McPhillips" },
     "foundingDate": "2025-03",
     "areaServed": "AU"
@@ -202,7 +203,7 @@
     @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 
     .hero__foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 22px 48px; align-items: end; margin-top: clamp(22px, 4vh, 44px); padding-top: clamp(18px, 2.6vh, 26px); border-top: 1px solid rgba(244, 240, 232, .16); }
-    .hero__sub { max-width: 44ch; font-size: clamp(1.04rem, 1.4vw, 1.32rem); line-height: 1.45; color: #CBD3DE; }
+    .hero__sub { max-width: 46ch; font-size: clamp(1.04rem, 1.4vw, 1.32rem); line-height: 1.45; color: #CBD3DE; text-wrap: pretty; }
     .hero__cta { display: flex; flex-wrap: wrap; gap: 12px; }
     .hero__hint {
       position: absolute; top: clamp(92px, 15vh, 150px); right: var(--gutter); display: none; align-items: center; gap: 10px;
@@ -291,6 +292,47 @@
     @media (max-width: 1080px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (max-width: 700px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+
+    /* ───────── 8b. AI READINESS ───────── */
+    .cap__more { margin-top: 1.3em; font-size: .95rem; }
+    .cap__more a { text-decoration-color: var(--amber-ink); text-underline-offset: 3px; }
+    .cap__more a:hover { color: var(--amber-ink); }
+    .ai { padding-bottom: clamp(56px, 7vw, 104px); }
+    .ai__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px 24px; align-items: start; }
+    .ai__side { grid-column: 1 / span 5; display: grid; gap: clamp(20px, 2.4vw, 32px); }
+    .ai__main { grid-column: 7 / -1; }
+    .aimap { background: rgba(255, 255, 255, .55); border: 1px solid var(--rule); border-radius: 22px; padding: clamp(16px, 2vw, 28px); }
+    .aimap__head { display: flex; justify-content: space-between; gap: 16px; font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); margin-bottom: 16px; }
+    .aimap__head span:last-child { color: var(--amber-ink); }
+    .aimap__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .aimap__grid li { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; min-height: 84px; padding: 10px; border: 1px solid var(--rule); border-radius: 10px; background: var(--paper); font-size: .8rem; line-height: 1.2; }
+    .aimap__grid b { font-weight: 500; }
+    .aimap__grid span { display: flex; gap: 5px; }
+    .aimap__grid i { width: 7px; height: 7px; border-radius: 50%; border: 1px solid rgba(74, 83, 97, .7); }
+    .aimap__grid i.on { background: var(--amber-ink); border-color: var(--amber-ink); }
+    .aimap__grid .is-ready { background: rgba(255, 181, 71, .42); border-color: rgba(138, 79, 0, .5); }
+    .aimap__grid .is-gap { background: repeating-linear-gradient(135deg, rgba(255, 181, 71, .2) 0 6px, rgba(255, 181, 71, 0) 6px 12px), var(--paper); border-style: dashed; border-color: rgba(138, 79, 0, .45); }
+    .js .aimap__grid li { opacity: 0; transform: translate3d(0, 10px, 0); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: calc(.25s + var(--n) * 55ms); }
+    .js .aimap.is-in .aimap__grid li { opacity: 1; transform: none; }
+    .aimap__key { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); }
+    .aimap__key li { display: flex; align-items: center; gap: 8px; }
+    .aimap__key i { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--rule); background: var(--paper); flex: none; }
+    .aimap__key .k-ready { background: rgba(255, 181, 71, .6); border-color: rgba(138, 79, 0, .5); }
+    .aimap__key .k-gap { background: repeating-linear-gradient(135deg, rgba(255, 181, 71, .45) 0 3px, rgba(255, 181, 71, 0) 3px 6px), var(--paper); border-style: dashed; border-color: rgba(138, 79, 0, .45); }
+    .aimap__cap { margin-top: 12px; font-size: .85rem; line-height: 1.45; color: var(--text-2); }
+    .ai__own { border-left: 2px solid var(--amber-ink); padding: 4px 0 4px clamp(16px, 2vw, 24px); }
+    .ai__own p:last-child { margin-top: 12px; font-size: clamp(1.1rem, 1.4vw, 1.3rem); line-height: 1.4; font-weight: 500; max-width: 34ch; }
+    .ready { border-bottom: 1px solid var(--rule); }
+    .ready li { display: grid; grid-template-columns: 3.2em minmax(0, 1fr); align-items: baseline; padding: clamp(18px, 2vw, 26px) 0; border-top: 1px solid var(--rule); }
+    .ready__n { font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; color: var(--amber-ink); }
+    .ready h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 2.3vw, 2.2rem); line-height: 1.05; letter-spacing: -.012em; }
+    .ready p { color: var(--text-2); margin-top: .4em; max-width: 52ch; }
+    .ai__cta { margin-top: clamp(22px, 2.6vw, 34px); }
+    @media (max-width: 900px) {
+      .ai__side, .ai__main { grid-column: 1 / -1; }
+      .ai__side { order: 2; }
+    }
+    @media (max-width: 440px) { .aimap__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
     /* ───────── 9. SELECTED WORK ───────── */
     .cases { display: grid; gap: 22px; }
@@ -579,6 +621,15 @@
           <circle class="dg-accent-fill dg-fade" cx="180" cy="142" r="5.500"/>
         </g>
       </symbol>
+      <symbol id="dg-ai" viewBox="0 0 240 180">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path opacity=".55" d="M20 24h70M20 32h42"/>
+          <path class="dg-draw" pathLength="1" d="M20 56h44v30h-44zM124 56h44v30h-44zM176 56h44v30h-44zM20 94h44v30h-44zM72 94h44v30h-44zM176 94h44v30h-44zM72 132h44v30h-44zM124 132h44v30h-44z"/>
+          <path class="dg-accent-wash dg-fade" stroke-width="1.6" d="M72 56h44v30h-44zM124 94h44v30h-44zM20 132h44v30h-44zM176 132h44v30h-44z"/>
+          <path class="dg-accent-fill dg-fade" d="M198 10C199.500 21 205 26.500 216 28C205 29.500 199.500 35 198 46C196.500 35 191 29.500 180 28C191 26.500 196.500 21 198 10Z"/>
+          <path class="dg-accent-fill dg-fade" d="M168 8C168.600 12.400 170.600 14.400 175 15C170.600 15.600 168.600 17.600 168 22C167.400 17.600 165.400 15.600 161 15C165.400 14.400 167.400 12.400 168 8Z"/>
+        </g>
+      </symbol>
       <symbol id="dg-seal" viewBox="0 0 240 180">
         <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="120" cy="90" r="84" stroke-dasharray="2 5" opacity=".6"/>
@@ -602,6 +653,7 @@
         <ul class="nav__links">
           <li><a href="#services">What we do</a></li>
           <li><a href="#approach">How we work</a></li>
+          <li><a href="#ai">AI readiness</a></li>
           <li><a href="#work">Selected work</a></li>
           <li><a href="#about">About</a></li>
         </ul>
@@ -616,6 +668,7 @@
     <nav aria-label="Mobile">
       <a href="#services">What we do</a>
       <a href="#approach">How we work</a>
+      <a href="#ai">AI readiness</a>
       <a href="#work">Selected work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -631,14 +684,14 @@
       <div class="hero__shade" aria-hidden="true"></div>
       <p class="hero__hint" aria-hidden="true"><i></i>Move the light. The structure appears.</p>
       <div class="container hero__inner">
-        <p class="eyebrow hero__eyebrow">Business architecture · Enterprise design · Strategy</p>
+        <p class="eyebrow hero__eyebrow">Business architecture · Enterprise design · Strategy · AI readiness</p>
         <h1 class="hero__title">
           <span class="sr-only">Decide, design, architect and transform with insight.</span>
           <span class="hero__verb" aria-hidden="true"><span class="verb" id="verb">Decide</span></span>
           <span class="hero__with" aria-hidden="true"><em>with insight.</em></span>
         </h1>
         <div class="hero__foot">
-          <p class="hero__sub">With Insight is a business architecture consultancy. We design and transform business models, operating models and enterprise architectures.</p>
+          <p class="hero__sub">With Insight is a business architecture consultancy. We design and transform business models, operating models and enterprise architectures. We also get organisations ready for AI.</p>
           <div class="hero__cta">
             <a class="btn btn--solid" href="#services">See what we do
               <svg class="i-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -671,7 +724,7 @@
       <div class="container">
         <header class="sec-head">
           <p class="eyebrow" data-reveal>What we do</p>
-          <h2 class="sec-title" data-reveal>We offer eight services.</h2>
+          <h2 class="sec-title" data-reveal>We offer nine services.</h2>
           <p class="sec-intro" data-reveal style="--d:.1s">Most engagements combine several of them. Each service is listed with what it includes.</p>
         </header>
 
@@ -824,6 +877,28 @@
             </div>
             <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-loop"/></svg></div>
           </article>
+
+          <article class="cap" data-reveal>
+            <div class="cap__head">
+              <span class="cap__num">09</span>
+              <h3 class="cap__title">AI readiness and enablement</h3>
+            </div>
+            <div class="cap__body">
+              <p class="cap__lead">What an organisation needs in place before AI can do useful work. We use proprietary methods for this service.</p>
+              <p class="cap__list-label">What it includes</p>
+              <ul class="cap__list">
+                <li>AI readiness assessments</li>
+                <li>AI uses mapped to value streams and capabilities</li>
+                <li>Process and knowledge records that AI assistants can use</li>
+                <li>Governance for the use of AI</li>
+                <li>Business cases and benefits maps for AI investment</li>
+                <li>AI adoption roadmaps</li>
+                <li>Executive briefings and workshops on AI</li>
+              </ul>
+              <p class="cap__more"><a href="#ai">See how we get an organisation ready for AI</a></p>
+            </div>
+            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-ai"/></svg></div>
+          </article>
         </div>
       </div>
     </section>
@@ -868,6 +943,77 @@
             <p>We map each application to the capability it supports. A roadmap sets the order of delivery.</p>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- AI READINESS -->
+    <section class="sec ai" id="ai">
+      <div class="container">
+        <header class="sec-head">
+          <p class="eyebrow" data-reveal>AI readiness</p>
+          <h2 class="sec-title" data-reveal>We get organisations ready for AI.</h2>
+          <p class="sec-intro" data-reveal style="--d:.1s">AI tools need a clear description of the organisation: its work, its data and its rules. Business architecture provides that description.</p>
+        </header>
+
+        <div class="ai__grid">
+          <div class="ai__side">
+            <figure class="aimap" data-reveal role="img" aria-label="Illustration of a capability map. Each capability is marked as ready for AI, as having gaps to close, or as not yet assessed.">
+              <div class="aimap__head" aria-hidden="true"><span>Capability map</span><span>AI readiness</span></div>
+              <ul class="aimap__grid" aria-hidden="true">
+                <li class="is-ready" style="--n:0"><b>Customer contact</b><span><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li class="is-gap" style="--n:1"><b>Case management</b><span><i class="on"></i><i></i><i class="on"></i></span></li>
+                <li class="is-ready" style="--n:2"><b>Payments</b><span><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li style="--n:3"><b>Policy advice</b><span><i></i><i></i><i></i></span></li>
+                <li class="is-gap" style="--n:4"><b>Procurement</b><span><i class="on"></i><i class="on"></i><i></i></span></li>
+                <li class="is-ready" style="--n:5"><b>Finance</b><span><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li class="is-gap" style="--n:6"><b>Workforce</b><span><i></i><i class="on"></i><i></i></span></li>
+                <li class="is-ready" style="--n:7"><b>Records</b><span><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li class="is-ready" style="--n:8"><b>Reporting</b><span><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li style="--n:9"><b>Assurance</b><span><i></i><i></i><i></i></span></li>
+                <li class="is-gap" style="--n:10"><b>Grants</b><span><i class="on"></i><i></i><i></i></span></li>
+                <li class="is-gap" style="--n:11"><b>Technology</b><span><i class="on"></i><i class="on"></i><i></i></span></li>
+              </ul>
+              <ul class="aimap__key" aria-hidden="true">
+                <li><i class="k-ready"></i>Ready</li>
+                <li><i class="k-gap"></i>Gaps to close</li>
+                <li><i></i>Not yet assessed</li>
+              </ul>
+              <figcaption class="aimap__cap">Illustration only. The three dots show the tests for each capability: process, data and rules.</figcaption>
+            </figure>
+            <div class="ai__own" data-reveal>
+              <p class="eyebrow">Our own methods</p>
+              <p>We use proprietary methods to get organisations ready for AI. Ask us how they apply to your organisation.</p>
+            </div>
+          </div>
+
+          <div class="ai__main">
+            <ol class="ready">
+              <li data-reveal>
+                <span class="ready__n">01</span>
+                <div><h3>Find where AI helps</h3><p>We map the value streams and capabilities. We then mark the places where AI can save time or improve a service.</p></div>
+              </li>
+              <li data-reveal>
+                <span class="ready__n">02</span>
+                <div><h3>Check readiness</h3><p>We assess the processes, data and rules that each use of AI depends on. We show the gaps openly.</p></div>
+              </li>
+              <li data-reveal>
+                <span class="ready__n">03</span>
+                <div><h3>Prepare the knowledge</h3><p>We record current processes and business rules in a structure that AI assistants can use.</p></div>
+              </li>
+              <li data-reveal>
+                <span class="ready__n">04</span>
+                <div><h3>Set the rules</h3><p>We design the governance. It states who approves a use of AI, who owns the risk and how people check the results.</p></div>
+              </li>
+              <li data-reveal>
+                <span class="ready__n">05</span>
+                <div><h3>Plan the investment</h3><p>We build the business case, the benefits map and the roadmap for adoption.</p></div>
+              </li>
+            </ol>
+            <a class="btn btn--solid ai__cta" href="mailto:hello@withinsight.com.au?subject=AI%20readiness" data-reveal>Ask us about AI readiness
+              <svg class="i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.500 8h10M8.500 3.500 13 8l-4.500 4.500" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1047,6 +1193,7 @@
         <div class="about__body" data-reveal style="--d:.1s">
           <p>James and his team offer unrivalled consulting capability and expertise.</p>
           <p>James is a senior business architect and enterprise design specialist.</p>
+          <p>We also get organisations ready for AI, and we use proprietary methods to do it.</p>
         </div>
         <dl class="about__facts" data-reveal style="--d:.15s">
           <div><dt>Company</dt><dd>With Insight Enterprises Pty Ltd</dd></div>
@@ -1092,7 +1239,7 @@
     <div class="container">
       <p class="eyebrow" data-reveal>Contact</p>
       <h2 class="contact__title" data-reveal>Write to us.</h2>
-      <p class="contact__lead" data-reveal style="--d:.08s">Tell us about the organisation and the decision you need to make.</p>
+      <p class="contact__lead" data-reveal style="--d:.08s">Tell us about the organisation and the decision you need to make, including any plans for AI.</p>
       <a class="contact__mail" href="mailto:hello@withinsight.com.au" data-reveal style="--d:.16s">hello@withinsight.com.au</a>
       <div class="contact__row" data-reveal style="--d:.24s">
         <button class="btn btn--ghost" id="copyBtn" type="button" data-email="hello@withinsight.com.au">
@@ -1299,7 +1446,7 @@
       var hero = doc.getElementById('top'), cv = doc.getElementById('field');
       if (!hero || !cv || !cv.getContext) return;
       var ctx = cv.getContext('2d');
-      var LABELS = ['CAPABILITY', 'SERVICE', 'PROCESS', 'POLICY', 'INFORMATION', 'SYSTEM', 'ROLE', 'OUTCOME', 'CHANNEL', 'RISK', 'DECISION', 'PROGRAM', 'STANDARD', 'VALUE STREAM', 'BENEFIT', 'OBJECTIVE', 'REQUIREMENT'];
+      var LABELS = ['CAPABILITY', 'SERVICE', 'PROCESS', 'POLICY', 'INFORMATION', 'SYSTEM', 'ROLE', 'OUTCOME', 'CHANNEL', 'RISK', 'DECISION', 'PROGRAM', 'STANDARD', 'VALUE STREAM', 'BENEFIT', 'OBJECTIVE', 'REQUIREMENT', 'DATA', 'KNOWLEDGE', 'AI USE'];
       var W = 0, H = 0, pts = [], edges = [], NB = 7, bk = [], raf = 0, visible = true;
       for (var b = 0; b < NB; b++) bk.push([]);
       var light = { x: 0, y: 0, tx: 0, ty: 0, r: 300, last: -1e9, placed: false };
