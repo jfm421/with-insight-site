@@ -27,8 +27,5 @@ python3 -m http.server 8080
   that the summary does not contain.
 - The "Selected work" section names no client, program, system, supplier or person.
   Keep any new example at the same level of generality.
-
-## Before you publish
-
-- The "Discretion" panel in the About section makes four commitments about client
-  information. Confirm that each one matches your contracts and practice.
+- Three examples describe work in progress. Each one shows a status and claims no
+  result. Add the result only when the work is complete.

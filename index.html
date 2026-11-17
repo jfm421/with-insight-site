@@ -306,7 +306,9 @@
     .case:nth-child(4) { --case-bg: #1A2536; }
     .case:nth-child(5) { --case-bg: #1F2C40; }
     .case:nth-child(6) { --case-bg: #24334A; }
-    /* The cards stack while scrolling. The script adds .is-stack only when every card fits in the window. */
+    /* The cards stack while scrolling. The script adds .is-stack only when every card fits in the window.
+       Stacked cards share one height, so an earlier card never shows above a later one. */
+    .cases.is-stack { grid-auto-rows: 1fr; }
     .cases.is-stack .case { position: sticky; top: calc(90px + var(--i) * 16px); }
     .case__meta { display: flex; flex-wrap: wrap; gap: 8px 16px; font-family: var(--mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--light-2); margin-bottom: 22px; }
     .case__num { color: var(--amber); }
@@ -890,9 +892,48 @@
         <div class="cases">
           <article class="case" style="--i:0">
             <div class="case__intro">
-              <p class="case__meta"><span class="case__num">01 / 03</span><span>A large federal department · Three years</span></p>
-              <h3 class="case__title">Value streams and a capability model for a major department</h3>
+              <p class="case__meta"><span class="case__num">01 / 06</span><span>A national agency · Current</span></p>
+              <h3 class="case__title">Reference architecture for a new national capability</h3>
               <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-blocks"/></svg></div>
+            </div>
+            <dl class="case__grid">
+              <div><dt>Need</dt><dd>One agreed design for a new national capability that the Commonwealth, states and territories share.</dd></div>
+              <div><dt>Work</dt><dd>We provide the lead architect for the program's reference business architecture. It covers strategy, value streams, a capability model with maturity ratings and the target operating model. It also covers the business view of data and an implementation roadmap. We produced the architecture decision records, a pain point register, the benefits management plan, a benefits map and the concept of operations. We drafted goals and measurable objectives for the agency's strategic plan. We reviewed the agency's draft data strategy and the program's requirements against the architecture. We now provide the business architecture inputs to the second pass business case.</dd></div>
+              <div><dt>Status</dt><dd>The work is in progress.</dd></div>
+            </dl>
+          </article>
+
+          <article class="case" style="--i:1">
+            <div class="case__intro">
+              <p class="case__meta"><span class="case__num">02 / 06</span><span>A large federal department · Current</span></p>
+              <h3 class="case__title">Evidence for an ERP replacement decision</h3>
+              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-fork"/></svg></div>
+            </div>
+            <dl class="case__grid">
+              <div><dt>Need</dt><dd>A sound basis for choosing how to replace the corporate ERP system.</dd></div>
+              <div><dt>Work</dt><dd>We provide the business analyst and architect for finance and procurement on the program team. We mapped the department's value chain and value streams. We helped build the framework for evaluating the options. We host current-state workshops with business areas and document their processes against a standard government process library. We also work on program scope, the operating model and governance, benefits, change impact and steering committee material.</dd></div>
+              <div><dt>Status</dt><dd>The work is in progress.</dd></div>
+            </dl>
+          </article>
+
+          <article class="case" style="--i:2">
+            <div class="case__intro">
+              <p class="case__meta"><span class="case__num">03 / 06</span><span>A national regulator · Current</span></p>
+              <h3 class="case__title">One view of services for a digital transformation</h3>
+              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-journey"/></svg></div>
+            </div>
+            <dl class="case__grid">
+              <div><dt>Need</dt><dd>One shared view of the regulator's services to guide a multi-year digital transformation.</dd></div>
+              <div><dt>Work</dt><dd>We provide a business architect for the transformation. We are the custodian of the master service catalogue. We designed the service blueprint and a matching view of the data behind each service. We started an inventory of current systems from existing documents. We drafted the governance cycle for future-state decisions, a data architecture approach and the team's work program.</dd></div>
+              <div><dt>Status</dt><dd>The work is in progress.</dd></div>
+            </dl>
+          </article>
+
+          <article class="case" style="--i:3">
+            <div class="case__intro">
+              <p class="case__meta"><span class="case__num">04 / 06</span><span>A large federal department · Three years</span></p>
+              <h3 class="case__title">Value streams and a capability model for a major department</h3>
+              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-flow"/></svg></div>
             </div>
             <dl class="case__grid">
               <div><dt>Need</dt><dd>One authoritative view of how the department delivers value and which capabilities it needs.</dd></div>
@@ -901,9 +942,9 @@
             </dl>
           </article>
 
-          <article class="case" style="--i:1">
+          <article class="case" style="--i:4">
             <div class="case__intro">
-              <p class="case__meta"><span class="case__num">02 / 03</span><span>Two national agencies</span></p>
+              <p class="case__meta"><span class="case__num">05 / 06</span><span>Two national agencies</span></p>
               <h3 class="case__title">ICT strategies for two national agencies</h3>
               <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-strategy"/></svg></div>
             </div>
@@ -914,9 +955,9 @@
             </dl>
           </article>
 
-          <article class="case" style="--i:2">
+          <article class="case" style="--i:5">
             <div class="case__intro">
-              <p class="case__meta"><span class="case__num">03 / 03</span><span>A non-government school system</span></p>
+              <p class="case__meta"><span class="case__num">06 / 06</span><span>A non-government school system</span></p>
               <h3 class="case__title">Operating model redesign for a school system</h3>
               <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-layers"/></svg></div>
             </div>
@@ -1040,7 +1081,6 @@
           </ul>
         </div>
 
-        <!-- Confirm that each commitment below matches your contracts and practice before publishing. -->
         <div class="discretion dark" id="discretion" data-reveal>
           <div class="discretion__intro">
             <p class="eyebrow">Discretion</p>
@@ -1230,8 +1270,10 @@
       var wrap = doc.querySelector('.cases'); if (!wrap) return;
       var cards = wrap.querySelectorAll('.case');
       function fit() {
-        var ok = window.innerWidth >= 960;
-        cards.forEach(function (c, n) { if (90 + n * 16 + c.offsetHeight + 24 > window.innerHeight) ok = false; });
+        wrap.classList.remove('is-stack');
+        var tallest = 0;
+        cards.forEach(function (c) { if (c.offsetHeight > tallest) tallest = c.offsetHeight; });
+        var ok = window.innerWidth >= 960 && 90 + (cards.length - 1) * 16 + tallest + 24 <= window.innerHeight;
         wrap.classList.toggle('is-stack', ok);
       }
       fit();
