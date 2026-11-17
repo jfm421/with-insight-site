@@ -21,10 +21,14 @@ Run this command in the repository folder, then open http://localhost:8080 in a 
 python3 -m http.server 8080
 ```
 
+## Content rules
+
+- The copy comes from the owner's work summary. Add no figure, date, result or quote
+  that the summary does not contain.
+- The "Selected work" section names no client, program, system, supplier or person.
+  Keep any new example at the same level of generality.
+
 ## Before you publish
 
-- The "Selected work" section holds draft examples that are not records of specific
-  engagements. Confirm or correct each one, then delete the paragraph with the class
-  `draft-note`.
 - The "Discretion" panel in the About section makes four commitments about client
   information. Confirm that each one matches your contracts and practice.

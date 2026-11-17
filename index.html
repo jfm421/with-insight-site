@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>With Insight | Strategy, enterprise design and architecture</title>
-  <meta name="description" content="With Insight provides strategy development, enterprise design, architecture and consulting for complex organisations. Led by James McPhillips.">
+  <title>With Insight | Business architecture consultancy</title>
+  <meta name="description" content="With Insight is a business architecture consultancy. It designs and transforms business models, operating models and enterprise architectures. Founded by James McPhillips.">
   <meta name="theme-color" content="#07090D">
   <link rel="canonical" href="https://withinsight.com.au/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="With Insight">
   <meta property="og:title" content="With Insight">
-  <meta property="og:description" content="Strategy development, enterprise design, architecture and consulting for complex organisations.">
+  <meta property="og:description" content="A business architecture consultancy. We design and transform business models, operating models and enterprise architectures.">
   <meta property="og:url" content="https://withinsight.com.au/">
   <meta property="og:image" content="https://withinsight.com.au/assets/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -26,7 +26,9 @@
     "name": "With Insight",
     "legalName": "With Insight Enterprises Pty Ltd",
     "url": "https://withinsight.com.au/",
-    "description": "Strategy development, enterprise design, architecture and consulting for complex organisations.",
+    "description": "A business architecture consultancy. It designs and transforms business models, operating models and enterprise architectures.",
+    "founder": { "@type": "Person", "name": "James McPhillips" },
+    "foundingDate": "2025-03",
     "areaServed": "AU"
   }
   </script>
@@ -220,31 +222,32 @@
     .statement__grid .eyebrow { grid-column: 1 / span 3; padding-top: 1em; align-self: start; }
     .statement__text { grid-column: 4 / -1; font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 4.2rem); line-height: 1.08; letter-spacing: -.014em; max-width: 24ch; }
     .js .statement__text .w { opacity: .16; transition: opacity .3s linear; }
-    .facts3 { grid-column: 4 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(20px, 3vw, 48px); margin-top: clamp(36px, 5vw, 72px); }
-    .facts3 > div { border-top: 1px solid var(--rule); padding-top: 18px; }
-    .facts3 dt { font-family: var(--mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-ink); margin-bottom: 10px; }
-    .facts3 dd { color: var(--text-2); max-width: 34ch; }
+    .record { grid-column: 4 / -1; margin-top: clamp(36px, 5vw, 72px); }
+    .record__lead { color: var(--text-2); font-size: clamp(1.05rem, 1.3vw, 1.2rem); line-height: 1.5; max-width: 54ch; margin-bottom: clamp(22px, 3vw, 38px); }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px clamp(20px, 3vw, 48px); }
+    .stats li { display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--rule); padding-top: 18px; }
+    .stats__n { display: flex; align-items: baseline; gap: .16em; font-family: var(--serif); font-size: clamp(3.4rem, 5.6vw, 5.4rem); line-height: .86; letter-spacing: -.02em; }
+    .stats__n small { font-family: var(--mono); font-size: .74rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-ink); }
+    .stats__t { color: var(--text-2); font-size: 1rem; line-height: 1.5; max-width: 27ch; }
     @media (max-width: 860px) {
-      .statement__grid .eyebrow, .statement__text, .facts3 { grid-column: 1 / -1; }
+      .statement__grid .eyebrow, .statement__text, .record { grid-column: 1 / -1; }
       .statement__grid .eyebrow { padding-top: 0; }
     }
-    @media (max-width: 640px) {
-      .facts3 { grid-template-columns: 1fr; row-gap: 22px; }
-      .facts3 dd { max-width: none; }
+    @media (max-width: 760px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     /* ───────── 7. CAPABILITIES ───────── */
     .services { padding-top: clamp(56px, 7vw, 104px); }
     .caps { border-bottom: 1px solid var(--rule); }
-    .cap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr); gap: 24px clamp(24px, 4vw, 64px); padding: clamp(36px, 4.6vw, 68px) 0; border-top: 1px solid var(--rule); align-items: start; }
+    .cap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr); gap: 24px clamp(24px, 4vw, 64px); padding: clamp(30px, 3.6vw, 52px) 0; border-top: 1px solid var(--rule); align-items: start; }
     .cap__num { display: block; font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; color: var(--amber-ink); margin-bottom: 14px; }
-    .cap__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 3.6rem); line-height: .98; letter-spacing: -.016em; }
-    .cap__lead { font-size: clamp(1.16rem, 1.5vw, 1.4rem); line-height: 1.32; font-weight: 500; margin-bottom: .75em; max-width: 30ch; }
-    .cap__text { color: var(--text-2); max-width: 54ch; }
-    .cap__list-label { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); margin: 1.7em 0 .8em; }
+    .cap__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.1vw, 2.9rem); line-height: 1; letter-spacing: -.016em; text-wrap: balance; }
+    .cap__lead { font-size: clamp(1.16rem, 1.5vw, 1.4rem); line-height: 1.32; font-weight: 500; max-width: 32ch; text-wrap: balance; }
+    .cap__list-label { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); margin: 1.5em 0 .8em; }
     .cap__list { display: flex; flex-wrap: wrap; gap: 8px; }
-    .cap__list li { font-size: .88rem; line-height: 1.2; padding: .5em .9em; border: 1px solid var(--rule); border-radius: 999px; background: rgba(255, 255, 255, .42); }
-    .cap__art { --dg-accent: #D4820A; --dg-bg: var(--paper); color: var(--text); justify-self: end; width: min(100%, 250px); }
+    .cap__list li { font-size: .88rem; line-height: 1.3; padding: .46em .9em; border: 1px solid var(--rule); border-radius: 17px; background: rgba(255, 255, 255, .42); }
+    .cap__art { --dg-accent: #D4820A; --dg-bg: var(--paper); color: var(--text); justify-self: end; width: min(100%, 210px); }
     .cap__art svg { width: 100%; height: auto; overflow: visible; }
     .js .cap .cap__art { --dg-off: 1; --dg-op: 0; }
     .js .cap.is-in .cap__art { --dg-off: 0; --dg-op: 1; }
@@ -275,25 +278,21 @@
     .scribble path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .scribble__ghost { stroke: rgba(244, 240, 232, .17); stroke-width: 1.25; }
     .scribble__line { stroke: var(--amber); stroke-width: 2; }
-    .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px clamp(20px, 3vw, 48px); }
+    .steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 36px clamp(18px, 2.4vw, 36px); }
     .step { position: relative; border-top: 1px solid var(--rule-d); padding-top: 24px; }
     .step::before { content: ""; position: absolute; top: -4px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--ink-2); border: 1px solid rgba(244, 240, 232, .45); transition: background .5s, border-color .5s, box-shadow .5s; }
     .step__num { font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; color: var(--light-2); transition: color .5s; }
-    .step h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 2.8vw, 2.7rem); line-height: 1.02; margin: .32em 0 .42em; }
+    .step h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 2.3vw, 2.3rem); line-height: 1.02; margin: .32em 0 .42em; }
     .step p { color: var(--light-2); font-size: 1rem; max-width: 34ch; }
     .js .step { opacity: .42; transition: opacity .7s; }
     .js .step.is-on { opacity: 1; }
     .step.is-on::before { background: var(--amber); border-color: var(--amber); box-shadow: 0 0 0 4px rgba(255, 181, 71, .2); }
     .step.is-on .step__num { color: var(--amber); }
-    @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 540px) { .steps { grid-template-columns: 1fr; } }
+    @media (max-width: 1080px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 700px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
 
     /* ───────── 9. SELECTED WORK ───────── */
-    .draft-note {
-      font-family: var(--mono); font-size: .8rem; line-height: 1.55; color: #6B3D00; background: rgba(255, 181, 71, .17);
-      border: 1px dashed rgba(138, 79, 0, .55); border-radius: 10px; padding: 14px 16px; margin: 0 0 28px; max-width: 78ch;
-    }
-    .draft-note strong { font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
     .cases { display: grid; gap: 22px; }
     .case {
       --case-bg: #0B0F15; --dg-accent: var(--amber); --dg-bg: var(--case-bg);
@@ -305,9 +304,10 @@
     .case:nth-child(2) { --case-bg: #101722; }
     .case:nth-child(3) { --case-bg: #151E2C; }
     .case:nth-child(4) { --case-bg: #1A2536; }
-    @media (min-width: 960px) and (min-height: 720px) {
-      .case { position: sticky; top: calc(90px + var(--i) * 16px); }
-    }
+    .case:nth-child(5) { --case-bg: #1F2C40; }
+    .case:nth-child(6) { --case-bg: #24334A; }
+    /* The cards stack while scrolling. The script adds .is-stack only when every card fits in the window. */
+    .cases.is-stack .case { position: sticky; top: calc(90px + var(--i) * 16px); }
     .case__meta { display: flex; flex-wrap: wrap; gap: 8px 16px; font-family: var(--mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--light-2); margin-bottom: 22px; }
     .case__num { color: var(--amber); }
     .case__intro { display: flex; flex-direction: column; }
@@ -326,9 +326,24 @@
       .case__grid > div { grid-template-columns: 1fr; gap: 6px; }
     }
 
+    /* more work, one row each */
+    .more { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 28px 24px; align-items: start; margin-top: clamp(64px, 8vw, 124px); }
+    .more__head { grid-column: 1 / span 3; }
+    .more__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.1rem, 3.3vw, 3.1rem); line-height: 1; letter-spacing: -.016em; max-width: 9ch; }
+    .more__note { color: var(--text-2); font-size: 1rem; margin-top: 16px; max-width: 26ch; }
+    .more__list { grid-column: 4 / -1; border-bottom: 1px solid var(--rule); }
+    .more__list > div { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); gap: 8px clamp(20px, 3vw, 48px); padding: 18px 0; border-top: 1px solid var(--rule); }
+    .more__list dt { font-family: var(--mono); font-size: .74rem; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; color: var(--amber-ink); padding-top: .3em; }
+    .more__list dd { max-width: 64ch; }
+    @media (max-width: 860px) {
+      .more__head, .more__list { grid-column: 1 / -1; }
+      .more__title, .more__note { max-width: none; }
+    }
+    @media (max-width: 620px) { .more__list > div { grid-template-columns: 1fr; } }
+
     /* ───────── 10. PRINCIPLES ───────── */
     .principles { background: var(--paper-2); }
-    .pgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+    .pgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
     .p { position: relative; display: flex; flex-direction: column; min-height: 264px; padding: clamp(22px, 2.6vw, 38px); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: background .45s; }
     .p::after { content: ""; position: absolute; top: -1px; left: -1px; width: 0; height: 2px; background: var(--amber-ink); transition: width .6s var(--ease); }
     .p:hover { background: rgba(255, 255, 255, .5); }
@@ -336,7 +351,7 @@
     .p__n { font-family: var(--mono); font-size: .76rem; letter-spacing: .12em; color: var(--amber-ink); }
     .p h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 2.4vw, 2.3rem); line-height: 1.04; margin-top: clamp(40px, 5vw, 76px); }
     .p p { color: var(--text-2); font-size: 1rem; margin-top: .55em; max-width: 36ch; }
-    @media (max-width: 900px) { .pgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 1080px) { .pgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 560px) { .pgrid { grid-template-columns: 1fr; } .p { min-height: 0; } .p h3 { margin-top: 28px; } }
 
     /* ───────── 11. CLIENTS ───────── */
@@ -348,11 +363,17 @@
     .clients__list li { display: grid; grid-template-columns: 2.6em minmax(0, 1fr); align-items: baseline; padding: 20px 0; border-top: 1px solid var(--rule); font-family: var(--serif); font-size: clamp(1.45rem, 2.05vw, 1.95rem); line-height: 1.12; letter-spacing: -.008em; transition: padding-left .45s var(--ease); }
     .clients__list li span { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; color: var(--amber-ink); }
     .clients__list li:hover { padding-left: 10px; }
+    .clients__types { grid-column: 4 / -1; margin-top: clamp(16px, 2.4vw, 36px); }
+    .clients__types-lead { color: var(--text-2); font-size: clamp(1.05rem, 1.3vw, 1.2rem); line-height: 1.5; max-width: 54ch; margin-bottom: clamp(18px, 2.4vw, 28px); }
+    .clients__types dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 4vw, 64px); }
+    .clients__types dl > div { border-top: 1px solid var(--rule); padding: 16px 0 24px; }
+    .clients__types dt { font-family: var(--mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-ink); margin-bottom: 8px; }
+    .clients__types dd { color: var(--text-2); max-width: 46ch; }
     @media (max-width: 860px) {
-      .clients__head, .clients__list { grid-column: 1 / -1; }
+      .clients__head, .clients__list, .clients__types { grid-column: 1 / -1; }
       .clients__title { max-width: none; }
     }
-    @media (max-width: 620px) { .clients__list { grid-template-columns: 1fr; } }
+    @media (max-width: 620px) { .clients__list, .clients__types dl { grid-template-columns: 1fr; } }
 
     /* ───────── 12. ABOUT ───────── */
     .about__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 30px 24px; align-items: start; }
@@ -364,11 +385,25 @@
     .about__facts > div { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-top: 1px solid var(--rule); }
     .about__facts > div:last-child { border-bottom: 1px solid var(--rule); }
     .about__facts dt { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); padding-top: .32em; }
-    .about__facts dd { font-size: 1rem; }
+    .about__facts dd { font-size: 1rem; min-width: 0; overflow-wrap: anywhere; }
+    @media (max-width: 420px) { .about__facts > div { grid-template-columns: 1fr; gap: 4px; } }
     .about__facts a { text-decoration-color: var(--amber-ink); text-underline-offset: 3px; }
     @media (max-width: 900px) {
       .about__lead, .about__body, .about__facts { grid-column: 1 / -1; grid-row: auto; }
     }
+
+    /* credentials */
+    .creds { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; align-items: start; margin-top: clamp(20px, 3vw, 48px); }
+    .creds .eyebrow { grid-column: 1 / span 3; padding-top: 1.75em; }
+    .creds__list { grid-column: 4 / -1; border-bottom: 1px solid var(--rule); }
+    .creds__list li { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 6px clamp(20px, 3vw, 48px); align-items: baseline; padding: 18px 0; border-top: 1px solid var(--rule); }
+    .creds__list strong { font-family: var(--serif); font-weight: 400; font-size: clamp(1.45rem, 2.05vw, 1.95rem); line-height: 1.12; letter-spacing: -.008em; }
+    .creds__list span { color: var(--text-2); font-size: 1rem; max-width: 44ch; }
+    @media (max-width: 860px) {
+      .creds .eyebrow, .creds__list { grid-column: 1 / -1; }
+      .creds .eyebrow { padding-top: 0; }
+    }
+    @media (max-width: 620px) { .creds__list li { grid-template-columns: 1fr; } }
 
     /* discretion panel */
     .discretion {
@@ -486,6 +521,66 @@
           <circle class="dg-accent-fill dg-fade" cx="220" cy="34" r="6"/>
         </g>
       </symbol>
+      <symbol id="dg-flow" viewBox="0 0 240 180">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke-dasharray="2 4" opacity=".6" d="M8 92H232"/>
+          <path class="dg-draw" pathLength="1" d="M29 48H50M102 48H124M172 48H190M148 72V116M122 132H100M48 132H29"/>
+          <circle class="dg-bg" cx="20" cy="48" r="9"/>
+          <path class="dg-draw" pathLength="1" d="M50 32h52v32h-52z"/>
+          <path class="dg-accent-wash dg-fade" stroke-width="1.6" d="M148 24L172 48L148 72L124 48Z"/>
+          <path class="dg-draw" pathLength="1" d="M190 32h42v32h-42z"/>
+          <path class="dg-draw" pathLength="1" d="M122 116h52v32h-52z"/>
+          <path class="dg-draw" pathLength="1" d="M48 116h52v32h-52z"/>
+          <circle class="dg-bg" cx="20" cy="132" r="9"/>
+          <circle class="dg-accent-fill dg-fade" cx="20" cy="132" r="5"/>
+          <path opacity=".55" d="M60 44h26M60 52h16M199 44h22M199 52h14M132 128h26M132 136h16M58 128h26M58 136h16"/>
+        </g>
+      </symbol>
+      <symbol id="dg-journey" viewBox="0 0 240 180">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke-dasharray="2 4" opacity=".6" d="M78 22V160M132 22V160M186 22V160"/>
+          <path class="dg-draw" pathLength="1" d="M12 160H228"/>
+          <path class="dg-draw" pathLength="1" d="M25 30a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
+          <path class="dg-draw" pathLength="1" d="M18 58a16 14 0 0 1 32 0"/>
+          <path class="dg-accent dg-draw" pathLength="1" stroke-width="1.9" d="M24 118C44 118 54 84 78 84S110 136 132 136S162 58 186 58S212 96 226 96"/>
+          <circle class="dg-bg" cx="24" cy="118" r="4"/>
+          <circle class="dg-accent-fill dg-fade" cx="78" cy="84" r="2.8"/>
+          <circle class="dg-accent-fill dg-fade" cx="132" cy="136" r="2.8"/>
+          <circle class="dg-accent-fill dg-fade" cx="186" cy="58" r="5.5"/>
+          <circle class="dg-bg" cx="226" cy="96" r="4"/>
+          <path opacity=".55" d="M33 170h24M93 170h24M147 170h24M195 170h24"/>
+        </g>
+      </symbol>
+      <symbol id="dg-page" viewBox="0 0 240 180">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path class="dg-draw" pathLength="1" d="M18 14h204v152h-204z"/>
+          <path opacity=".55" d="M32 30h64M32 38h38"/>
+          <circle class="dg-accent-fill dg-fade" cx="204" cy="33" r="5"/>
+          <path class="dg-draw" pathLength="1" d="M32 52h54v40h-54z"/>
+          <path class="dg-accent-wash dg-fade" stroke-width="1.6" d="M93 52h54v40h-54z"/>
+          <path class="dg-draw" pathLength="1" d="M154 52h54v40h-54z"/>
+          <path opacity=".55" d="M40 64h30M40 72h20M162 64h30M162 72h20"/>
+          <path class="dg-draw" pathLength="1" d="M32 110H208"/>
+          <path d="M52 105v10M98 105v10M144 105v10M190 105v10"/>
+          <path class="dg-draw" pathLength="1" d="M32 126h82v26h-82z"/>
+          <path class="dg-draw" pathLength="1" d="M126 126h82v26h-82z"/>
+          <path opacity=".55" d="M42 136h40M42 143h24M136 136h40M136 143h24"/>
+        </g>
+      </symbol>
+      <symbol id="dg-loop" viewBox="0 0 240 180">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path class="dg-draw" pathLength="1" d="M12 142H226"/>
+          <path d="M218 135L226 142L218 149"/>
+          <path class="dg-draw" pathLength="1" d="M48 142a20 20 0 0 1 0 -40a20 20 0 0 1 0 40"/>
+          <path class="dg-draw" pathLength="1" d="M110 142a28 28 0 0 1 0 -56a28 28 0 0 1 0 56"/>
+          <path class="dg-accent dg-draw" pathLength="1" stroke-width="1.9" d="M180 142a36 36 0 0 1 0 -72a36 36 0 0 1 0 72"/>
+          <path d="M44 97.500L49.500 102L44 106.500M106 81.500L111.500 86L106 90.500"/>
+          <path class="dg-accent" stroke-width="1.9" d="M175.500 65L181.500 70L175.500 75"/>
+          <circle class="dg-accent-fill dg-fade" cx="48" cy="142" r="2.800"/>
+          <circle class="dg-accent-fill dg-fade" cx="110" cy="142" r="2.800"/>
+          <circle class="dg-accent-fill dg-fade" cx="180" cy="142" r="5.500"/>
+        </g>
+      </symbol>
       <symbol id="dg-seal" viewBox="0 0 240 180">
         <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="120" cy="90" r="84" stroke-dasharray="2 5" opacity=".6"/>
@@ -538,14 +633,14 @@
       <div class="hero__shade" aria-hidden="true"></div>
       <p class="hero__hint" aria-hidden="true"><i></i>Move the light. The structure appears.</p>
       <div class="container hero__inner">
-        <p class="eyebrow hero__eyebrow">Strategy · Enterprise design · Architecture · Consulting</p>
+        <p class="eyebrow hero__eyebrow">Business architecture · Enterprise design · Strategy</p>
         <h1 class="hero__title">
           <span class="sr-only">Decide, design, architect and transform with insight.</span>
           <span class="hero__verb" aria-hidden="true"><span class="verb" id="verb">Decide</span></span>
           <span class="hero__with" aria-hidden="true"><em>with insight.</em></span>
         </h1>
         <div class="hero__foot">
-          <p class="hero__sub">Strategy development, enterprise design, architecture and consulting for complex organisations.</p>
+          <p class="hero__sub">With Insight is a business architecture consultancy. We design and transform business models, operating models and enterprise architectures.</p>
           <div class="hero__cta">
             <a class="btn btn--solid" href="#services">See what we do
               <svg class="i-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -560,21 +655,16 @@
     <section class="sec statement" id="why">
       <div class="container statement__grid">
         <p class="eyebrow" data-reveal>Why With Insight</p>
-        <p class="statement__text" id="statement">Large organisations are hard to see whole. Strategy, people, process, information and technology each change at a different pace, and each has a different owner. We build one clear view of how they fit, so leaders can decide what to change and in what order.</p>
-        <dl class="facts3">
-          <div data-reveal>
-            <dt>Who we work with</dt>
-            <dd>Executives and program leaders in large, complex organisations.</dd>
-          </div>
-          <div data-reveal style="--d:.1s">
-            <dt>When we are engaged</dt>
-            <dd>Before a major investment, during a transformation, or when a program needs an independent review.</dd>
-          </div>
-          <div data-reveal style="--d:.2s">
-            <dt>What we leave behind</dt>
-            <dd>A clear design, a plan to deliver it, and a team that can maintain both.</dd>
-          </div>
-        </dl>
+        <p class="statement__text" id="statement">Our work connects executive strategy, organisational design and program delivery. We link each decision to the evidence behind it.</p>
+        <div class="record">
+          <p class="record__lead" data-reveal>James McPhillips is the founder and director of With Insight. His record includes:</p>
+          <ul class="stats">
+            <li data-reveal><span class="stats__n">20+</span><span class="stats__t">Australian Government entities among his clients.</span></li>
+            <li data-reveal style="--d:.08s"><span class="stats__n">2</span><span class="stats__t">Organisations that endorsed his architecture as their authoritative view.</span></li>
+            <li data-reveal style="--d:.16s"><span class="stats__n">5 <small>weeks</small></span><span class="stats__t">To deliver an ICT strategy and roadmap for a national agency.</span></li>
+            <li data-reveal style="--d:.24s"><span class="stats__n">4 <small>months</small></span><span class="stats__t">To the Beta release of a redeveloped intranet for a central agency.</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -583,66 +673,27 @@
       <div class="container">
         <header class="sec-head">
           <p class="eyebrow" data-reveal>What we do</p>
-          <h2 class="sec-title" data-reveal>We work across four disciplines.</h2>
-          <p class="sec-intro" data-reveal style="--d:.1s">Most engagements use more than one. We combine them, so that the strategy, the design and the architecture agree.</p>
+          <h2 class="sec-title" data-reveal>We offer eight services.</h2>
+          <p class="sec-intro" data-reveal style="--d:.1s">Most engagements combine several of them. Each service is listed with what it includes.</p>
         </header>
 
         <div class="caps">
           <article class="cap" data-reveal>
             <div class="cap__head">
               <span class="cap__num">01</span>
-              <h3 class="cap__title">Strategy development</h3>
+              <h3 class="cap__title">Business and enterprise architecture</h3>
             </div>
             <div class="cap__body">
-              <p class="cap__lead">Set a direction that people can act on.</p>
-              <p class="cap__text">We work with executives to define where the organisation is going and why. We test the options against evidence, cost and risk. The result is a strategy with clear priorities and an order of delivery.</p>
-              <p class="cap__list-label">Typical outputs</p>
+              <p class="cap__lead">One agreed view of how the organisation delivers value and the capabilities it needs.</p>
+              <p class="cap__list-label">What it includes</p>
               <ul class="cap__list">
-                <li>Strategic direction and priorities</li>
-                <li>Target state on a page</li>
-                <li>Roadmap</li>
-                <li>Investment case</li>
-                <li>Measures of success</li>
-              </ul>
-            </div>
-            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-strategy"/></svg></div>
-          </article>
-
-          <article class="cap" data-reveal>
-            <div class="cap__head">
-              <span class="cap__num">02</span>
-              <h3 class="cap__title">Enterprise design</h3>
-            </div>
-            <div class="cap__body">
-              <p class="cap__lead">Design how the whole organisation works.</p>
-              <p class="cap__text">A strategy needs an organisation that can deliver it. We design the services, capabilities, structures and governance to do that. We design them together, because a change to one affects the others.</p>
-              <p class="cap__list-label">Typical outputs</p>
-              <ul class="cap__list">
-                <li>Operating model</li>
-                <li>Capability model</li>
-                <li>Service and process design</li>
-                <li>Organisation and governance design</li>
-                <li>Transition plan</li>
-              </ul>
-            </div>
-            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-layers"/></svg></div>
-          </article>
-
-          <article class="cap" data-reveal>
-            <div class="cap__head">
-              <span class="cap__num">03</span>
-              <h3 class="cap__title">Architecture</h3>
-            </div>
-            <div class="cap__body">
-              <p class="cap__lead">Plan business and technology change as one design.</p>
-              <p class="cap__text">We describe the organisation as it is and as it needs to be. The description covers capabilities, information, applications and technology. We then set out the steps between the two, so every program builds to one agreed design.</p>
-              <p class="cap__list-label">Typical outputs</p>
-              <ul class="cap__list">
-                <li>Enterprise and business architecture</li>
-                <li>Current and target state</li>
-                <li>Transition roadmap</li>
-                <li>Architecture governance</li>
-                <li>Design assurance</li>
+                <li>Capability models with maturity ratings</li>
+                <li>Value streams</li>
+                <li>Value chains</li>
+                <li>Service catalogues</li>
+                <li>Application-to-capability mapping</li>
+                <li>Concepts of operations</li>
+                <li>Architecture decision records</li>
               </ul>
             </div>
             <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-blocks"/></svg></div>
@@ -650,22 +701,130 @@
 
           <article class="cap" data-reveal>
             <div class="cap__head">
-              <span class="cap__num">04</span>
-              <h3 class="cap__title">Consulting</h3>
+              <span class="cap__num">02</span>
+              <h3 class="cap__title">Strategy and roadmaps</h3>
             </div>
             <div class="cap__body">
-              <p class="cap__lead">Independent advice for important decisions.</p>
-              <p class="cap__text">Some problems need a senior, independent view for a short period. We review programs, facilitate executive decisions and assess designs that other teams produce. We also coach internal teams, so the capability stays in the organisation.</p>
-              <p class="cap__list-label">Typical outputs</p>
+              <p class="cap__lead">A strategy that starts from the business, with a roadmap to implement it.</p>
+              <p class="cap__list-label">What it includes</p>
               <ul class="cap__list">
-                <li>Independent reviews</li>
-                <li>Executive workshops</li>
-                <li>Program shaping</li>
-                <li>Second opinions on major designs</li>
-                <li>Coaching for internal teams</li>
+                <li>Business-led digital and ICT strategies</li>
+                <li>Goals and measurable objectives for strategic plans</li>
+                <li>Implementation roadmaps</li>
+                <li>Investment roadmaps</li>
+              </ul>
+            </div>
+            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-strategy"/></svg></div>
+          </article>
+
+          <article class="cap" data-reveal>
+            <div class="cap__head">
+              <span class="cap__num">03</span>
+              <h3 class="cap__title">Operating model and governance</h3>
+            </div>
+            <div class="cap__body">
+              <p class="cap__lead">A design for how the organisation works and how its programs make decisions.</p>
+              <p class="cap__list-label">What it includes</p>
+              <ul class="cap__list">
+                <li>Target operating models</li>
+                <li>Governance for federated and multi-agency programs</li>
+                <li>The regular cycle of meetings and decisions that runs a program</li>
+              </ul>
+            </div>
+            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-layers"/></svg></div>
+          </article>
+
+          <article class="cap" data-reveal>
+            <div class="cap__head">
+              <span class="cap__num">04</span>
+              <h3 class="cap__title">Business cases and benefits</h3>
+            </div>
+            <div class="cap__body">
+              <p class="cap__lead">The architecture and benefits evidence that an investment decision needs.</p>
+              <p class="cap__list-label">What it includes</p>
+              <ul class="cap__list">
+                <li>Business architecture inputs to first and second pass business cases</li>
+                <li>Frameworks for evaluating options</li>
+                <li>Benefits management plans</li>
+                <li>Benefits maps</li>
               </ul>
             </div>
             <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-fork"/></svg></div>
+          </article>
+
+          <article class="cap" data-reveal>
+            <div class="cap__head">
+              <span class="cap__num">05</span>
+              <h3 class="cap__title">Business analysis and process</h3>
+            </div>
+            <div class="cap__body">
+              <p class="cap__lead">A clear record of how the work is done now and what a change requires.</p>
+              <p class="cap__list-label">What it includes</p>
+              <ul class="cap__list">
+                <li>Current-state discovery</li>
+                <li>Process mapping</li>
+                <li>Requirements</li>
+                <li>Fit-to-standard analysis for ERP</li>
+                <li>Change impact assessment</li>
+                <li>Reviews of requirements against the architecture</li>
+              </ul>
+            </div>
+            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-flow"/></svg></div>
+          </article>
+
+          <article class="cap" data-reveal>
+            <div class="cap__head">
+              <span class="cap__num">06</span>
+              <h3 class="cap__title">Human-centred design</h3>
+            </div>
+            <div class="cap__body">
+              <p class="cap__lead">Services designed with the people who use them.</p>
+              <p class="cap__list-label">What it includes</p>
+              <ul class="cap__list">
+                <li>User research</li>
+                <li>Personas</li>
+                <li>Journey maps</li>
+                <li>Service blueprints</li>
+                <li>Co-design</li>
+              </ul>
+            </div>
+            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-journey"/></svg></div>
+          </article>
+
+          <article class="cap" data-reveal>
+            <div class="cap__head">
+              <span class="cap__num">07</span>
+              <h3 class="cap__title">Workshops and executive communication</h3>
+            </div>
+            <div class="cap__body">
+              <p class="cap__lead">Complex material that executives can read on one page.</p>
+              <p class="cap__list-label">What it includes</p>
+              <ul class="cap__list">
+                <li>Workshop design and facilitation, in person and online</li>
+                <li>Steering committee packs</li>
+                <li>One-page plans</li>
+                <li>Posters</li>
+                <li>Short explainer videos</li>
+              </ul>
+            </div>
+            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-page"/></svg></div>
+          </article>
+
+          <article class="cap" data-reveal>
+            <div class="cap__head">
+              <span class="cap__num">08</span>
+              <h3 class="cap__title">Agile delivery</h3>
+            </div>
+            <div class="cap__body">
+              <p class="cap__lead">Coaching and leadership for the teams that deliver the change.</p>
+              <p class="cap__list-label">What it includes</p>
+              <ul class="cap__list">
+                <li>Scrum and SAFe coaching</li>
+                <li>Leadership of multi-disciplinary teams</li>
+                <li>Project management</li>
+              </ul>
+            </div>
+            <div class="cap__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-loop"/></svg></div>
           </article>
         </div>
       </div>
@@ -676,8 +835,8 @@
       <div class="container">
         <header class="sec-head">
           <p class="eyebrow" data-reveal>How we work</p>
-          <h2 class="sec-title" data-reveal>Each engagement has four stages.</h2>
-          <p class="sec-intro" data-reveal style="--d:.1s">The stages are the same for a short review and a long program. The depth of each stage changes with the size of the work.</p>
+          <h2 class="sec-title" data-reveal>Five links connect a strategy to its solutions.</h2>
+          <p class="sec-intro" data-reveal style="--d:.1s">We link strategy, capabilities, benefits, requirements and solutions. A reader can then trace each decision back to its evidence.</p>
         </header>
 
         <div class="scribble" id="scribble" aria-hidden="true">
@@ -687,23 +846,28 @@
         <ol class="steps" id="steps">
           <li class="step">
             <span class="step__num">01</span>
-            <h3>Listen</h3>
-            <p>We start with your people, your documents and your data. We ask the difficult questions early, while the answers can still change the plan.</p>
+            <h3>Strategy</h3>
+            <p>Goals and measurable objectives set the direction.</p>
           </li>
           <li class="step">
             <span class="step__num">02</span>
-            <h3>Make sense</h3>
-            <p>We put the whole picture on one page. People then debate the same facts, and the points of disagreement become clear.</p>
+            <h3>Capabilities</h3>
+            <p>A capability model shows what the organisation must be able to do. Each capability has a maturity rating.</p>
           </li>
           <li class="step">
             <span class="step__num">03</span>
-            <h3>Design</h3>
-            <p>We develop options with your team and test each one against cost, risk and capacity. We recommend one option and give the reasons.</p>
+            <h3>Benefits</h3>
+            <p>A benefits map links each change to the benefit it must deliver.</p>
           </li>
           <li class="step">
             <span class="step__num">04</span>
-            <h3>Mobilise</h3>
-            <p>We turn the design into a plan with owners, a sequence and funding. We stay involved as delivery starts, and we adjust the design as teams learn.</p>
+            <h3>Requirements</h3>
+            <p>We review the requirements against the architecture.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">05</span>
+            <h3>Solutions</h3>
+            <p>We map each application to the capability it supports. A roadmap sets the order of delivery.</p>
           </li>
         </ol>
       </div>
@@ -711,73 +875,78 @@
 
     <!-- SELECTED WORK -->
     <!--
-      DRAFT CONTENT. The four examples below are drafts based on the four disciplines.
-      They are not records of specific engagements, and they name no sector or client.
-      Confirm or correct each one before this page is published, then delete the
-      .draft-note paragraph.
+      The examples and the list below come from the owner's work summary.
+      They name no client, program, system, supplier or person.
+      Keep any new example at the same level of generality.
     -->
     <section class="sec work" id="work">
       <div class="container">
         <header class="sec-head">
           <p class="eyebrow" data-reveal>Selected work</p>
-          <h2 class="sec-title" data-reveal>Examples of our work, without the names.</h2>
-          <p class="sec-intro" data-reveal style="--d:.1s">Much of our work is sensitive. These examples leave out the names of the organisations and the people involved.</p>
+          <h2 class="sec-title" data-reveal>Examples of the work, without the names.</h2>
+          <p class="sec-intro" data-reveal style="--d:.1s">These examples come from across James's career. They name no client, program or person.</p>
         </header>
-
-        <p class="draft-note"><strong>Draft note.</strong> These four examples are drafts based on the four disciplines above. They are not records of specific engagements. Confirm or correct each one before this page goes live.</p>
 
         <div class="cases">
           <article class="case" style="--i:0">
             <div class="case__intro">
-              <p class="case__meta"><span class="case__num">01 / 04</span><span>Architecture · Transformation blueprint</span></p>
-              <h3 class="case__title">One blueprint for a large transformation</h3>
+              <p class="case__meta"><span class="case__num">01 / 03</span><span>A large federal department · Three years</span></p>
+              <h3 class="case__title">Value streams and a capability model for a major department</h3>
               <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-blocks"/></svg></div>
             </div>
             <dl class="case__grid">
-              <div><dt>Situation</dt><dd>A large organisation had funding for a transformation that would run for several years. Many projects were under way, and each one had its own view of the future.</dd></div>
-              <div><dt>Our work</dt><dd>We built one target state across business, information and technology. We mapped each project to it and set out the order of delivery.</dd></div>
-              <div><dt>Outcome</dt><dd>Executives used one blueprint to sequence investment and to resolve design disputes between programs.</dd></div>
+              <div><dt>Need</dt><dd>One authoritative view of how the department delivers value and which capabilities it needs.</dd></div>
+              <div><dt>Work</dt><dd>James built the enterprise value stream and a catalogue of operational value streams across every portfolio. He developed the baseline enterprise capability model. He contributed business architecture content to the ICT strategy and roadmap. He wrote a multi-year capability uplift strategy and investment roadmap for enterprise accounting.</dd></div>
+              <div><dt>Result</dt><dd>Every governance body endorsed the capability model as the department's authoritative business architecture view. The value stream catalogue became the department's framework for mapping capabilities and finding work to consolidate.</dd></div>
             </dl>
           </article>
 
           <article class="case" style="--i:1">
             <div class="case__intro">
-              <p class="case__meta"><span class="case__num">02 / 04</span><span>Enterprise design · Operating model</span></p>
-              <h3 class="case__title">An operating model for new responsibilities</h3>
-              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-layers"/></svg></div>
+              <p class="case__meta"><span class="case__num">02 / 03</span><span>Two national agencies</span></p>
+              <h3 class="case__title">ICT strategies for two national agencies</h3>
+              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-strategy"/></svg></div>
             </div>
             <dl class="case__grid">
-              <div><dt>Situation</dt><dd>An organisation took on new responsibilities with a fixed start date. Its structure, services and systems suited its earlier role.</dd></div>
-              <div><dt>Our work</dt><dd>We defined the functions and capabilities that the new role required, and designed the operating model. We identified the minimum set of services and systems needed on the first day.</dd></div>
-              <div><dt>Outcome</dt><dd>The organisation met its start date with a clear operating model and a staged plan to build the rest.</dd></div>
+              <div><dt>Need</dt><dd>A business-led ICT strategy and a roadmap to implement it.</dd></div>
+              <div><dt>Work</dt><dd>James led a multi-disciplinary team that co-designed a user-centred ICT strategy and roadmap with the first agency. The strategy came with research insights, personas, journey maps and architecture views. He then delivered a concise ICT strategy and roadmap for the second agency.</dd></div>
+              <div><dt>Result</dt><dd>Both agencies received a strategy and an implementation roadmap. The second strategy took five weeks.</dd></div>
             </dl>
           </article>
 
           <article class="case" style="--i:2">
             <div class="case__intro">
-              <p class="case__meta"><span class="case__num">03 / 04</span><span>Strategy · Investment roadmap</span></p>
-              <h3 class="case__title">From a strategy to a funded roadmap</h3>
-              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-strategy"/></svg></div>
+              <p class="case__meta"><span class="case__num">03 / 03</span><span>A non-government school system</span></p>
+              <h3 class="case__title">Operating model redesign for a school system</h3>
+              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-layers"/></svg></div>
             </div>
             <dl class="case__grid">
-              <div><dt>Situation</dt><dd>An organisation had a strategy that its leaders supported. The work had no agreed sequence, cost or owner.</dd></div>
-              <div><dt>Our work</dt><dd>We tested the priorities with executives and grouped the initiatives into stages. We then built the roadmap and the case for investment.</dd></div>
-              <div><dt>Outcome</dt><dd>Leaders agreed what to do first, what to defer and what to stop.</dd></div>
+              <div><dt>Need</dt><dd>An operating model that supports the core services the system offers.</dd></div>
+              <div><dt>Work</dt><dd>James led an evidence-based redesign of the operating model. He defined what stakeholders needed and the business capabilities required to deliver the core services.</dd></div>
+              <div><dt>Result</dt><dd>Leadership endorsed the transformation work plan, which was built on those capabilities.</dd></div>
             </dl>
           </article>
+        </div>
 
-          <article class="case" style="--i:3">
-            <div class="case__intro">
-              <p class="case__meta"><span class="case__num">04 / 04</span><span>Consulting · Independent review</span></p>
-              <h3 class="case__title">An independent review of a critical program</h3>
-              <div class="case__art" aria-hidden="true"><svg viewBox="0 0 240 180"><use href="#dg-fork"/></svg></div>
-            </div>
-            <dl class="case__grid">
-              <div><dt>Situation</dt><dd>A technology program was behind schedule. Teams disputed the main design decisions, and executives were losing confidence.</dd></div>
-              <div><dt>Our work</dt><dd>We reviewed the architecture, the governance and the open decisions. We reported the findings in plain terms, with a recommended course for each.</dd></div>
-              <div><dt>Outcome</dt><dd>The executive made the outstanding decisions, assigned each risk to an owner and reset the delivery plan.</dd></div>
-            </dl>
-          </article>
+        <div class="more">
+          <div class="more__head">
+            <h3 class="more__title" data-reveal>More of James's work</h3>
+            <p class="more__note" data-reveal style="--d:.08s">Each row gives the type of client and what James did.</p>
+          </div>
+          <dl class="more__list" data-reveal style="--d:.1s">
+            <div><dt>A central agency</dt><dd>Managed an intranet redevelopment with user research, a new content model and a move to a new platform. The Beta release took four months. He also developed the baseline business architecture for the agency's ICT transformation program.</dd></div>
+            <div><dt>A federal agency</dt><dd>Led a multi-disciplinary team that co-designed and delivered an options report for connecting government data centres.</dd></div>
+            <div><dt>A federal agency</dt><dd>Coached three teams in Scrum and delivered a time-critical Cabinet submission and portfolio report.</dd></div>
+            <div><dt>A large federal department</dt><dd>Produced current-state service blueprints and process maps for identity and access management. Designed the business architecture and operating models to govern those capabilities.</dd></div>
+            <div><dt>A small federal regulator</dt><dd>Led the baseline business architecture: stakeholder views, customer journey, value network, strategy map and insights report. Executives used it to reset their strategic direction.</dd></div>
+            <div><dt>A national cultural institution</dt><dd>Developed an executable strategy and four-year implementation plan for a communications and marketing team, with a prioritised roadmap based on capability assessments.</dd></div>
+            <div><dt>A national program</dt><dd>Built the full pack for a three-hour executive workshop: a plan on a page, live-capture templates and speaker notes.</dd></div>
+            <div><dt>A federal department</dt><dd>Co-wrote an automation roadmap.</dd></div>
+            <div><dt>A federal department</dt><dd>Elicited and documented requirements across multiple commodity streams.</dd></div>
+            <div><dt>A federal department</dt><dd>Developed requirements for the first release of a national environmental database.</dd></div>
+            <div><dt>A data technology company</dt><dd>Designed the business model and a roadmap for international expansion.</dd></div>
+            <div><dt>Federal agencies, state health services, local government and a global car maker</dt><dd>Delivered more than 10 ICT projects: enterprise architecture, learning management systems, intranets, web content management and smart forms. The work included business cases, content migration analysis and platform remediation.</dd></div>
+          </dl>
         </div>
       </div>
     </section>
@@ -787,38 +956,28 @@
       <div class="container">
         <header class="sec-head">
           <p class="eyebrow" data-reveal>What to expect</p>
-          <h2 class="sec-title" data-reveal>Six commitments in every engagement.</h2>
+          <h2 class="sec-title" data-reveal>Four things clients can expect.</h2>
         </header>
         <div class="pgrid">
           <article class="p" data-reveal>
             <span class="p__n">01</span>
-            <h3>The whole picture</h3>
-            <p>We look across strategy, people, process, information and technology. Most problems cross those boundaries.</p>
+            <h3>Open about gaps</h3>
+            <p>We show gaps and weak evidence openly.</p>
           </article>
           <article class="p" data-reveal style="--d:.08s">
             <span class="p__n">02</span>
-            <h3>Plain English</h3>
-            <p>We write for the people who must act on the work. If a page needs a glossary, we rewrite the page.</p>
+            <h3>Shared programs</h3>
+            <p>We work well in programs that no single organisation controls, such as those shared by the Commonwealth, states and territories.</p>
           </article>
           <article class="p" data-reveal style="--d:.16s">
             <span class="p__n">03</span>
-            <h3>Evidence first</h3>
-            <p>We form a view from documents, data and interviews. We show the evidence behind each recommendation.</p>
+            <h3>The full range</h3>
+            <p>We cover the full range from executive strategy to detailed requirements.</p>
           </article>
-          <article class="p" data-reveal>
+          <article class="p" data-reveal style="--d:.24s">
             <span class="p__n">04</span>
-            <h3>Work that is used</h3>
-            <p>We produce a small number of clear documents that teams use to decide. We do not write documents that nobody will use.</p>
-          </article>
-          <article class="p" data-reveal style="--d:.08s">
-            <span class="p__n">05</span>
-            <h3>Alongside your team</h3>
-            <p>We work with your people from the first week. They own the result, and they can maintain it after we leave.</p>
-          </article>
-          <article class="p" data-reveal style="--d:.16s">
-            <span class="p__n">06</span>
-            <h3>Discretion</h3>
-            <p>We keep client information confidential, and we describe our work only in general terms.</p>
+            <h3>Plain English</h3>
+            <p>We write in plain English and put complex models on one page.</p>
           </article>
         </div>
       </div>
@@ -841,6 +1000,15 @@
           <li><span>07</span>Avec Global</li>
           <li><span>08</span>Arteri</li>
         </ul>
+        <div class="clients__types" data-reveal>
+          <p class="clients__types-lead">Across his career, James has worked with these kinds of organisation.</p>
+          <dl>
+            <div><dt>Australian Government</dt><dd>Large departments, central agencies, national regulators, small agencies and a national cultural institution.</dd></div>
+            <div><dt>Policy areas</dt><dd>Health and public health, corporate services, digital government, Indigenous affairs, emergency recovery, education and employment, agriculture and environment.</dd></div>
+            <div><dt>Other public sector</dt><dd>State health services and local government.</dd></div>
+            <div><dt>Non-government and private sector</dt><dd>A school system, a global car maker, a data technology company and global technology brands.</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
@@ -848,17 +1016,29 @@
     <section class="sec about" id="about">
       <div class="container about__grid">
         <p class="eyebrow" data-reveal>About</p>
-        <h2 class="about__lead" data-reveal>With Insight is a consulting practice led by <em>James McPhillips.</em></h2>
+        <h2 class="about__lead" data-reveal>With Insight is a business architecture consultancy, founded by <em>James McPhillips.</em></h2>
         <div class="about__body" data-reveal style="--d:.1s">
           <p>James and his team offer unrivalled consulting capability and expertise.</p>
-          <p>They work with the leaders of complex organisations in the Australian public sector and in private enterprise.</p>
+          <p>James founded With Insight in March 2025. He is a senior business architect and enterprise design specialist.</p>
         </div>
         <dl class="about__facts" data-reveal style="--d:.15s">
           <div><dt>Company</dt><dd>With Insight Enterprises Pty Ltd</dd></div>
           <div><dt>ABN</dt><dd>26 684 088 293</dd></div>
+          <div><dt>Founded</dt><dd>March 2025</dd></div>
           <div><dt>Location</dt><dd>Australia</dd></div>
           <div><dt>Email</dt><dd><a href="mailto:hello@withinsight.com.au">hello@withinsight.com.au</a></dd></div>
         </dl>
+
+        <div class="creds" data-reveal>
+          <p class="eyebrow">Credentials</p>
+          <ul class="creds__list">
+            <li><strong>Certified Business Architect (CBA)®</strong><span>Awarded by the Business Architecture Guild. James has been a Guild member since 2017.</span></li>
+            <li><strong>Certification in Applied Business Architecture</strong></li>
+            <li><strong>PRINCE2 Practitioner</strong></li>
+            <li><strong>Certified Scrum Master</strong></li>
+            <li><strong>SFIA Level 6</strong><span>The level of his recent federal roles, as senior and lead business architect.</span></li>
+          </ul>
+        </div>
 
         <!-- Confirm that each commitment below matches your contracts and practice before publishing. -->
         <div class="discretion dark" id="discretion" data-reveal>
@@ -1036,7 +1216,7 @@
         if (!reduce) { var sr = scribble.getBoundingClientRect(); q = clamp((vh * 0.92 - sr.top) / (vh * 0.6), 0, 1); }
         var drawn = sCum[Math.round(q * (sCum.length - 1))] || 0;
         sLine.style.strokeDashoffset = (sLen - drawn).toFixed(1);
-        var marks = [0.03, 0.35, 0.6, 0.81];
+        var marks = [0.03, 0.27, 0.48, 0.67, 0.84];
         steps.forEach(function (s, n) { s.classList.toggle('is-on', q >= marks[n]); });
       }
     }
@@ -1044,6 +1224,21 @@
     window.addEventListener('scroll', requestScroll, { passive: true });
     window.addEventListener('resize', function () { safe(buildScribble); requestScroll(); });
     onScroll();
+
+    /* ── Selected work: the cards stack only when every card fits in the window ── */
+    safe(function () {
+      var wrap = doc.querySelector('.cases'); if (!wrap) return;
+      var cards = wrap.querySelectorAll('.case');
+      function fit() {
+        var ok = window.innerWidth >= 960;
+        cards.forEach(function (c, n) { if (90 + n * 16 + c.offsetHeight + 24 > window.innerHeight) ok = false; });
+        wrap.classList.toggle('is-stack', ok);
+      }
+      fit();
+      window.addEventListener('resize', fit);
+      window.addEventListener('load', fit);
+      if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(fit);
+    });
 
     /* ── Contact: the light follows the pointer ── */
     safe(function () {
@@ -1076,7 +1271,7 @@
       var hero = doc.getElementById('top'), cv = doc.getElementById('field');
       if (!hero || !cv || !cv.getContext) return;
       var ctx = cv.getContext('2d');
-      var LABELS = ['CAPABILITY', 'SERVICE', 'PROCESS', 'POLICY', 'INFORMATION', 'SYSTEM', 'ROLE', 'OUTCOME', 'CHANNEL', 'RISK', 'DECISION', 'PROGRAM', 'STANDARD', 'VALUE STREAM'];
+      var LABELS = ['CAPABILITY', 'SERVICE', 'PROCESS', 'POLICY', 'INFORMATION', 'SYSTEM', 'ROLE', 'OUTCOME', 'CHANNEL', 'RISK', 'DECISION', 'PROGRAM', 'STANDARD', 'VALUE STREAM', 'BENEFIT', 'OBJECTIVE', 'REQUIREMENT'];
       var W = 0, H = 0, pts = [], edges = [], NB = 7, bk = [], raf = 0, visible = true;
       for (var b = 0; b < NB; b++) bk.push([]);
       var light = { x: 0, y: 0, tx: 0, ty: 0, r: 300, last: -1e9, placed: false };
